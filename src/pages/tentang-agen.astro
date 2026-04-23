@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import { siteConfig } from '../data/site';
+---
+
+<BaseLayout title="Tentang Agen Masduki" description="Profil Masduki sebagai agen resmi NoeSantara untuk wilayah Kabupaten Kebumen, Jawa Tengah. Menjelaskan identitas, alamat, peran layanan, dan fokus pendampingan lokal.">
+  <section class="page-hero">
+    <div class="container page-hero-grid">
+      <div class="page-hero-copy" data-reveal>
+        <p class="eyebrow">Tentang Agen</p>
+        <h1>Masduki sebagai titik kontak resmi NoeSantara untuk wilayah Kebumen</h1>
+        <p>
+          Tujuan halaman ini adalah membangun kejelasan identitas. Pengunjung perlu tahu bahwa website ini
+          bukan kantor pusat, tetapi website agen resmi wilayah yang memudahkan komunikasi lokal, konsultasi,
+          pemesanan, dan tindak lanjut kemitraan.
+        </p>
+        <a class="btn btn-primary" href={`${siteConfig.whatsappLink}?text=${encodeURIComponent('Halo Pak Masduki, saya ingin menghubungi agen resmi NoeSantara wilayah Kebumen.')}`} target="_blank" rel="noreferrer">Hubungi Masduki</a>
+      </div>
+      <img class="page-hero-image" src="/assets/hero/hero-main.jpeg" alt="Visual produk dan konteks agen resmi NoeSantara Kebumen" data-reveal />
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container about-grid">
+      <article class="about-card" data-reveal>
+        <SectionHeading eyebrow="Identitas" title="Data resmi yang perlu diketahui pengunjung" />
+        <p><strong>Nama:</strong> {siteConfig.agentName}</p>
+        <p><strong>Posisi:</strong> {siteConfig.role}</p>
+        <p><strong>Wilayah:</strong> {siteConfig.region}</p>
+        <p><strong>Alamat:</strong> {siteConfig.address}</p>
+      </article>
+      <article class="about-card" data-reveal>
+        <SectionHeading eyebrow="Peran Website" title="Apa fungsi website ini" />
+        <ul class="icon-list">
+          <li>Memperjelas keberadaan agen resmi NoeSantara di Kebumen.</li>
+          <li>Membantu pengunjung memahami fokus produk utama yang aktif dipasarkan.</li>
+          <li>Mempercepat konversi ke WhatsApp untuk order, konsultasi, dan reseller.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+</BaseLayout>

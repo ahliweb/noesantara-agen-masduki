@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import FAQList from '../components/FAQList.astro';
+import { faqs, galleryItems, siteConfig } from '../data/site';
+
+const schema = {
+  '@type': 'Product',
+  name: 'PHC TaburMas',
+  description:
+    'PHC TaburMas dijelaskan secara praktis untuk kebutuhan vitalitas tanaman dan konsultasi produk di Kebumen.',
+  brand: { '@type': 'Brand', name: 'NoeSantara' },
+};
+---
+
+<BaseLayout title="PHC TaburMas Kebumen" description="Penjelasan PHC TaburMas untuk petani dan calon pembeli di Kebumen. Fokus pada dukungan vitalitas tanaman, konsultasi praktis, dan inquiry WhatsApp." image="/assets/produk/phc-taburmas-1.jpeg" schema={schema}>
+  <section class="page-hero">
+    <div class="container page-hero-grid">
+      <div class="page-hero-copy" data-reveal>
+        <p class="eyebrow">PHC TaburMas Kebumen</p>
+        <h1>PHC TaburMas untuk dukungan vitalitas tanaman yang mudah ditanyakan dan mudah ditindaklanjuti</h1>
+        <p>
+          Halaman ini dibuat untuk membantu calon pembeli memahami PHC TaburMas secara lebih praktis: kapan
+          produk ini relevan, fase apa yang biasa dibahas, dan bagaimana memulai konsultasi langsung dengan
+          agen resmi NoeSantara wilayah Kebumen.
+        </p>
+        <div class="inline-actions">
+          <a class="btn btn-primary" href={`${siteConfig.whatsappLink}?text=${encodeURIComponent('Halo Pak Masduki, saya ingin tanya PHC TaburMas untuk tanaman saya.')}`} target="_blank" rel="noreferrer">Tanya PHC TaburMas</a>
+          <a class="btn btn-outline" href="/kontak">Hubungi Agen</a>
+        </div>
+      </div>
+      <img class="page-hero-image" src="/assets/produk/phc-taburmas-1.jpeg" alt="Produk PHC TaburMas NoeSantara" data-reveal />
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <SectionHeading eyebrow="Fase Manfaat" title="Pembahasan PHC TaburMas umumnya terkait tiga fase berikut" center={true} />
+      <div class="grid-3">
+        <article class="info-card" data-reveal><h3>Vegetatif</h3><p>Mendukung pembahasan terkait pertumbuhan awal, perkembangan daun, dan kesiapan tanaman berkembang lebih stabil.</p></article>
+        <article class="info-card" data-reveal><h3>Generatif</h3><p>Sering ditanyakan ketika petani ingin dukungan pada fase pembungaan dan kesinambungan perkembangan tanaman.</p></article>
+        <article class="info-card" data-reveal><h3>Pembuahan</h3><p>Relevan untuk percakapan terkait performa tanaman menjelang hasil, dengan arahan yang disesuaikan melalui konsultasi.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split-grid">
+      <div class="surface-card" style="padding: 1.5rem;" data-reveal>
+        <SectionHeading eyebrow="Siapa yang Cocok" title="PHC TaburMas cocok untuk petani yang ingin solusi lebih praktis" />
+        <ul class="icon-list">
+          <li>Ingin jalur inquiry cepat untuk produk yang mendukung vitalitas tanaman.</li>
+          <li>Butuh arahan awal sebelum menentukan pola aplikasi.</li>
+          <li>Ingin menghubungi agen lokal tanpa harus melewati alur yang panjang.</li>
+        </ul>
+      </div>
+      <div class="surface-card" style="padding: 1.5rem;" data-reveal>
+        <SectionHeading eyebrow="Panduan Awal" title="Cara memulai percakapan yang paling efektif" />
+        <ol class="step-list">
+          <li>Sebutkan komoditas, fase tumbuh, dan kendala utamanya.</li>
+          <li>Tanyakan apakah kebutuhan Anda lebih cocok diarahkan untuk dukungan vegetatif atau generatif.</li>
+          <li>Lanjutkan permintaan harga atau order bila sudah mendapat kejelasan awal.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <SectionHeading eyebrow="Proof Terkait" title="Dokumentasi yang mendukung percakapan tentang PHC TaburMas" />
+      <div class="gallery-grid">
+        {galleryItems.slice(4).map((item) => (
+          <article class="gallery-card" data-reveal>
+            <img src={item.image} alt={item.alt} />
+            <div class="gallery-card-body">
+              <span class="chip">{item.category}</span>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionHeading eyebrow="FAQ PHC TaburMas" title="Pertanyaan yang sering muncul" center={true} />
+      <FAQList items={faqs.taburmas} />
+    </div>
+  </section>
+</BaseLayout>

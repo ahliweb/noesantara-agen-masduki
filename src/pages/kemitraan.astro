@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import FAQList from '../components/FAQList.astro';
+import { faqs, siteConfig } from '../data/site';
+---
+
+<BaseLayout title="Kemitraan dan Reseller Kebumen" description="Peluang reseller NoeSantara di bawah agen resmi wilayah Kebumen. Cocok untuk calon mitra lokal yang ingin memasarkan TerraGen dan PHC TaburMas secara lebih terarah.">
+  <section class="page-hero">
+    <div class="container page-hero-grid">
+      <div class="page-hero-copy" data-reveal>
+        <p class="eyebrow">Kemitraan Lokal</p>
+        <h1>Peluang reseller NoeSantara di bawah pendampingan agen resmi Kebumen</h1>
+        <p>
+          Halaman ini ditujukan untuk calon reseller yang ingin mulai serius menjual produk NoeSantara dengan
+          jalur komunikasi yang jelas, positioning lokal yang tepat, dan dukungan follow up dari agen resmi wilayah.
+        </p>
+        <div class="inline-actions">
+          <a class="btn btn-primary" href={`${siteConfig.whatsappLink}?text=${encodeURIComponent('Halo Pak Masduki, saya ingin daftar atau tanya peluang reseller NoeSantara di Kebumen.')}`} target="_blank" rel="noreferrer">Daftar via WhatsApp</a>
+          <a class="btn btn-outline" href="/kontak">Hubungi Agen</a>
+        </div>
+      </div>
+      <img class="page-hero-image" src="/assets/galeri/edukasi-mitra.jpeg" alt="Edukasi mitra dan reseller NoeSantara" data-reveal />
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <SectionHeading eyebrow="Kenapa Menarik" title="Nilai yang membuat reseller lokal lebih mudah bergerak" center={true} />
+      <div class="grid-3">
+        <article class="timeline-card" data-reveal><h3>Titik kontak resmi daerah</h3><p>Calon pembeli lebih mudah percaya saat ada agen wilayah yang jelas identitas dan alamatnya.</p></article>
+        <article class="timeline-card" data-reveal><h3>Lebih mudah follow up</h3><p>Komunikasi tidak berhenti di informasi produk, tetapi bisa diteruskan ke percakapan order dan kebutuhan lapangan.</p></article>
+        <article class="timeline-card" data-reveal><h3>Lebih cocok untuk pasar lokal</h3><p>Reseller dapat menjual dengan bahasa yang lebih praktis dan dekat dengan persoalan petani setempat.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container timeline-grid">
+      <article class="timeline-card" data-reveal>
+        <p class="eyebrow">Untuk Siapa</p>
+        <h3>Calon reseller yang cocok</h3>
+        <ul class="icon-list">
+          <li>Petani atau pelaku budidaya yang punya jaringan lokal.</li>
+          <li>Toko pertanian yang ingin menambah lini produk relevan.</li>
+          <li>Individu yang ingin mulai jualan berbasis edukasi dan relasi.</li>
+        </ul>
+      </article>
+      <article class="timeline-card" data-reveal>
+        <p class="eyebrow">Langkah Awal</p>
+        <h3>Proses mulai yang sederhana</h3>
+        <ol class="step-list">
+          <li>Hubungi Masduki via WhatsApp.</li>
+          <li>Jelaskan area jangkauan dan minat penjualan Anda.</li>
+          <li>Dapatkan arahan awal produk, positioning, dan tindak lanjut yang sesuai.</li>
+        </ol>
+      </article>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <SectionHeading eyebrow="FAQ Kemitraan" title="Pertanyaan yang sering diajukan calon reseller" center={true} />
+      <FAQList items={faqs.partnership} />
+    </div>
+  </section>
+</BaseLayout>

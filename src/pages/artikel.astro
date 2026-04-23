@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import { articleCards } from '../data/site';
+---
+
+<BaseLayout title="Artikel dan Edukasi" description="Artikel edukasi seputar kesehatan tanah, tips aplikasi, insight reseller, dan arah konsultasi produk NoeSantara untuk pengunjung Kebumen.">
+  <section class="page-hero">
+    <div class="container page-hero-grid">
+      <div class="page-hero-copy" data-reveal>
+        <p class="eyebrow">Artikel / Edukasi</p>
+        <h1>Konten edukasi untuk membangun trust sebelum pengunjung masuk ke percakapan penjualan</h1>
+        <p>
+          Halaman artikel difungsikan sebagai lapisan trust dan edukasi. Topiknya dibuat realistis untuk pasar
+          lokal: kesehatan tanah, tips konsultasi, support pertumbuhan, dan peluang reseller berbasis relasi.
+        </p>
+      </div>
+      <img class="page-hero-image" src="/assets/galeri/terragen-pemulihan-lahan.jpeg" alt="Artikel edukasi pertanian lokal" data-reveal />
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <SectionHeading eyebrow="Daftar Artikel" title="Topik edukasi yang relevan untuk audiens website agen" />
+      <div class="article-grid">
+        {articleCards.map((item) => (
+          <article class="article-card" data-reveal>
+            <div class="chip-row"><span class="chip">{item.category}</span></div>
+            <h3>{item.title}</h3>
+            <p>{item.excerpt}</p>
+            <a class="btn btn-outline" href="/kontak">Tanya Topik Ini</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

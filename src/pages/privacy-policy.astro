@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../data/site';
+---
+
+<BaseLayout title="Privacy Policy" description="Kebijakan privasi website agen resmi NoeSantara wilayah Kebumen.">
+  <section class="section">
+    <div class="container" style="max-width: 860px;">
+      <div class="about-card" data-reveal>
+        <p class="eyebrow">Privacy Policy</p>
+        <h1>Kebijakan Privasi</h1>
+        <p>Website ini merupakan website <strong>{siteConfig.role}</strong> untuk wilayah <strong>{siteConfig.region}</strong>.</p>
+        <p>Data yang Anda kirim melalui form atau WhatsApp hanya digunakan untuk keperluan konsultasi, pemesanan produk, dan follow up kemitraan atau reseller.</p>
+        <p>Kami tidak menjual data pengunjung kepada pihak lain. Data hanya diproses seperlunya untuk melanjutkan komunikasi yang Anda mulai sendiri melalui website ini.</p>
+        <p>Dengan menggunakan website ini, Anda memahami bahwa komunikasi lanjutan dapat dilakukan melalui WhatsApp sesuai kebutuhan inquiry Anda.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

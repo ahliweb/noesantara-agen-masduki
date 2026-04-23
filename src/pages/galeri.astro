@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import { galleryItems, siteConfig } from '../data/site';
+
+const categories = [...new Set(galleryItems.map((item) => item.category))];
+const videos = [
+  {
+    id: '4hRapHg4ijM',
+    title: 'Testimoni dan dokumentasi lapangan',
+    category: 'Testimoni',
+    description: 'Video pendukung untuk memperlihatkan pola edukasi dan pembuktian lapangan yang menjadi fondasi trust.',
+  },
+  {
+    id: 'O3C4wWCg5y0',
+    title: 'Cuplikan proof penggunaan produk',
+    category: 'Bukti Lapangan',
+    description: 'Materi video ini dapat membantu calon pembeli membayangkan konteks penggunaan dan pendekatan pendampingan.',
+  },
+];
+---
+
+<BaseLayout title="Galeri Bukti Lapangan" description="Galeri bukti lapangan, dokumentasi edukasi, dan proof visual TerraGen serta PHC TaburMas untuk mendukung trust pengunjung wilayah Kebumen.">
+  <section class="page-hero">
+    <div class="container page-hero-grid">
+      <div class="page-hero-copy" data-reveal>
+        <p class="eyebrow">Galeri dan Bukti Lapangan</p>
+        <h1>Dokumentasi visual untuk membantu pengunjung lebih yakin sebelum bertanya atau order</h1>
+        <p>
+          Halaman ini mengumpulkan pola proof yang relevan dengan positioning agen lokal: ada dokumentasi komoditas,
+          pemulihan lahan, edukasi mitra, dan konteks penggunaan produk yang bisa dijadikan bahan diskusi.
+        </p>
+        <div class="inline-actions">
+          <a class="btn btn-primary" href={`${siteConfig.whatsappLink}?text=${encodeURIComponent('Halo Pak Masduki, saya sudah lihat bukti lapangan dan ingin konsultasi lebih lanjut.')}`} target="_blank" rel="noreferrer">Konsultasi Setelah Lihat Proof</a>
+          <a class="btn btn-outline" href="/kontak">Hubungi Agen</a>
+        </div>
+      </div>
+      <img class="page-hero-image" src="/assets/hero/hero-float.jpeg" alt="Dokumentasi lapangan NoeSantara" data-reveal />
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <SectionHeading eyebrow="Kategori" title="Kategori proof yang paling relevan untuk calon pembeli dan reseller" />
+      <div class="chip-row" data-reveal>
+        {categories.map((item) => (
+          <span class="chip">{item}</span>
+        ))}
+      </div>
+      <div class="proof-grid" style="margin-top: 1.5rem;">
+        {galleryItems.map((item) => (
+          <article class="proof-card" data-reveal>
+            <img src={item.image} alt={item.alt} />
+            <div class="proof-card-body">
+              <span class="chip">{item.category}</span>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+              <a class="btn btn-outline" href={`${siteConfig.whatsappLink}?text=${encodeURIComponent(`Halo Pak Masduki, saya tertarik dengan proof kategori ${item.category} dan ingin tanya lebih lanjut.`)}`} target="_blank" rel="noreferrer">Tanya Proof Ini</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionHeading eyebrow="Video Pendukung" title="Materi video untuk memperkuat trust dan edukasi" />
+      <div class="grid-2">
+        {videos.map((video) => (
+          <article class="article-card" data-reveal>
+            <img src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`} alt={video.title} style="width:100%; height:240px; object-fit:cover; border-radius: 18px;" />
+            <div class="chip-row"><span class="chip">{video.category}</span></div>
+            <h3>{video.title}</h3>
+            <p>{video.description}</p>
+            <a class="btn btn-outline" href={`https://www.youtube.com/watch?v=${video.id}`} target="_blank" rel="noreferrer">Tonton Video</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

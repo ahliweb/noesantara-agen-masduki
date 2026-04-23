@@ -1,0 +1,41 @@
+---
+import { navItems, siteConfig } from '../data/site';
+---
+
+<header class="site-header" data-site-header>
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label={siteConfig.siteName}>
+      <span class="brand-mark">N</span>
+      <span>
+        <strong>{siteConfig.shortName}</strong>
+        <small>{siteConfig.region}</small>
+      </span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Navigasi utama">
+      {navItems.map((item) => (
+        <a href={item.href}>{item.label}</a>
+      ))}
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn-primary btn-sm desktop-only" href={`${siteConfig.whatsappLink}?text=${encodeURIComponent(siteConfig.whatsappMessage)}`} target="_blank" rel="noreferrer">
+        WhatsApp
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-button>
+        Menu
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu" data-mobile-menu>
+    <nav class="mobile-nav container" aria-label="Navigasi seluler">
+      {navItems.map((item) => (
+        <a href={item.href}>{item.label}</a>
+      ))}
+      <a class="btn btn-primary" href={`${siteConfig.whatsappLink}?text=${encodeURIComponent(siteConfig.whatsappMessage)}`} target="_blank" rel="noreferrer">
+        Chat WhatsApp
+      </a>
+    </nav>
+  </div>
+</header>

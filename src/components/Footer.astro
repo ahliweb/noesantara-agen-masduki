@@ -1,0 +1,46 @@
+---
+import { navItems, siteConfig } from '../data/site';
+---
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <p class="footer-eyebrow">Website agen resmi wilayah</p>
+      <h2>{siteConfig.agentName}</h2>
+      <p>
+        Website ini mewakili <strong>{siteConfig.role}</strong> untuk wilayah <strong>{siteConfig.region}</strong>,
+        bukan situs kantor pusat NoeSantara.
+      </p>
+    </div>
+
+    <div>
+      <h3>Navigasi</h3>
+      <ul class="footer-list">
+        {navItems.map((item) => (
+          <li><a href={item.href}>{item.label}</a></li>
+        ))}
+      </ul>
+    </div>
+
+    <div>
+      <h3>Kontak</h3>
+      <ul class="footer-list">
+        <li><a href={`${siteConfig.whatsappLink}?text=${encodeURIComponent(siteConfig.whatsappMessage)}`} target="_blank" rel="noreferrer">WhatsApp {siteConfig.whatsappNumber}</a></li>
+        <li>{siteConfig.region}</li>
+        <li>{siteConfig.address}</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Legal</h3>
+      <ul class="footer-list">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms-conditions">Terms & Conditions</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <p>© 2026 {siteConfig.siteName}. Untuk konsultasi, pemesanan, dan follow up kemitraan wilayah Kebumen.</p>
+  </div>
+</footer>

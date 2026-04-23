@@ -1,0 +1,99 @@
+---
+import { siteConfig } from '../data/site';
+
+const formTarget = `${siteConfig.whatsappLink}?text=`;
+---
+
+<div class="contact-form-card" data-whatsapp-base={formTarget}>
+  <h2>Form Inquiry Singkat</h2>
+  <p>Isi singkat kebutuhan Anda. Saat dikirim, form akan membuka WhatsApp menuju Masduki agar follow up lebih cepat.</p>
+
+  <form class="contact-form" novalidate>
+    <div class="form-grid">
+      <label>
+        Nama Lengkap
+        <input name="name" type="text" autocomplete="name" required />
+      </label>
+
+      <label>
+        No. WhatsApp
+        <input name="phone" type="tel" inputmode="tel" autocomplete="tel" required />
+      </label>
+    </div>
+
+    <div class="form-grid">
+      <label>
+        Keperluan
+        <select name="purpose" required>
+          <option value="">Pilih keperluan</option>
+          <option value="Konsultasi Produk">Konsultasi Produk</option>
+          <option value="Pemesanan TerraGen">Pemesanan TerraGen</option>
+          <option value="Pemesanan PHC TaburMas">Pemesanan PHC TaburMas</option>
+          <option value="Daftar Reseller">Daftar Reseller</option>
+          <option value="Permintaan Harga">Permintaan Harga</option>
+        </select>
+      </label>
+
+      <label>
+        Wilayah / Komoditas
+        <input name="context" type="text" placeholder="Contoh: Pejagoan / cabai" required />
+      </label>
+    </div>
+
+    <label>
+      Pesan Singkat
+      <textarea name="message" rows="5" placeholder="Ceritakan kebutuhan, kondisi lahan, atau minat kemitraan Anda." required></textarea>
+    </label>
+
+    <label class="checkbox-row">
+      <input type="checkbox" name="consent" required />
+      <span>Data ini digunakan untuk konsultasi, pemesanan, dan follow up kemitraan melalui WhatsApp.</span>
+    </label>
+
+    <button class="btn btn-primary" type="submit">Kirim ke WhatsApp</button>
+    <p class="form-status" role="status" aria-live="polite"></p>
+  </form>
+</div>
+
+<script is:inline>
+  (() => {
+    const root = document.currentScript?.previousElementSibling;
+    if (!(root instanceof HTMLElement)) return;
+
+    const form = root.querySelector('form');
+    const status = root.querySelector('.form-status');
+    const base = root.dataset.whatsappBase;
+
+    if (!(form instanceof HTMLFormElement) || !(status instanceof HTMLElement) || !base) return;
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const data = new FormData(form);
+
+      const name = String(data.get('name') || '').trim();
+      const phone = String(data.get('phone') || '').trim();
+      const purpose = String(data.get('purpose') || '').trim();
+      const context = String(data.get('context') || '').trim();
+      const message = String(data.get('message') || '').trim();
+      const consent = data.get('consent');
+
+      if (!name || !phone || !purpose || !context || !message || !consent) {
+        status.textContent = 'Mohon lengkapi semua field dan persetujuan data.';
+        return;
+      }
+
+      const text = [
+        'Halo Pak Masduki, saya mengirim inquiry dari website agen resmi NoeSantara Kebumen.',
+        `Nama: ${name}`,
+        `WhatsApp: ${phone}`,
+        `Keperluan: ${purpose}`,
+        `Wilayah/Komoditas: ${context}`,
+        `Pesan: ${message}`,
+      ].join('\n');
+
+      window.open(`${base}${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
+      status.textContent = 'WhatsApp sedang dibuka untuk melanjutkan konsultasi Anda.';
+      form.reset();
+    });
+  })();
+</script>

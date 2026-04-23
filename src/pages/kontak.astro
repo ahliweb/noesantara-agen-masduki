@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactForm from '../components/ContactForm.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import { siteConfig } from '../data/site';
+---
+
+<BaseLayout title="Kontak Agen NoeSantara Kebumen" description="Hubungi Masduki, agen resmi NoeSantara di Kebumen, melalui WhatsApp atau form inquiry singkat untuk konsultasi, pemesanan, dan pendaftaran reseller.">
+  <section class="page-hero">
+    <div class="container page-hero-grid">
+      <div class="page-hero-copy" data-reveal>
+        <p class="eyebrow">Kontak</p>
+        <h1>WhatsApp-first, cepat ditindaklanjuti, dan jelas titik kontaknya</h1>
+        <p>
+          Halaman kontak difokuskan untuk mempercepat percakapan. Pengunjung bisa langsung chat atau mengisi
+          form inquiry yang akan diarahkan ke WhatsApp Masduki sebagai agen resmi wilayah Kebumen.
+        </p>
+        <div class="inline-actions">
+          <a class="btn btn-primary" href={`${siteConfig.whatsappLink}?text=${encodeURIComponent('Halo Pak Masduki, saya ingin konsultasi dari halaman kontak website.')}`} target="_blank" rel="noreferrer">Chat WhatsApp</a>
+        </div>
+      </div>
+      <div class="contact-card" data-reveal>
+        <h3>Informasi Kontak</h3>
+        <p><strong>Nama:</strong> {siteConfig.agentName}</p>
+        <p><strong>Wilayah:</strong> {siteConfig.region}</p>
+        <p><strong>WhatsApp:</strong> <a href={siteConfig.whatsappLink} target="_blank" rel="noreferrer">{siteConfig.whatsappNumber}</a></p>
+        <p><strong>Alamat:</strong> {siteConfig.address}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container contact-grid">
+      <div data-reveal>
+        <SectionHeading eyebrow="Form Singkat" title="Kirim kebutuhan Anda sebelum lanjut ke WhatsApp" />
+        <ContactForm />
+      </div>
+      <div class="contact-card" data-reveal>
+        <SectionHeading eyebrow="Cakupan Layanan" title="Fokus layanan wilayah dan tindak lanjut" />
+        <ul class="service-list">
+          <li>Konsultasi produk TerraGen dan PHC TaburMas.</li>
+          <li>Permintaan harga, penjelasan, dan follow up order.</li>
+          <li>Pendaftaran reseller lokal di bawah agen Kebumen.</li>
+          <li>Penjelasan awal penggunaan yang lebih praktis dan mudah dipahami.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

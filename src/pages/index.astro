@@ -1,0 +1,247 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import FAQList from '../components/FAQList.astro';
+import {
+  faqs,
+  galleryItems,
+  painPoints,
+  products,
+  serviceHighlights,
+  siteConfig,
+  testimonials,
+  trustStrip,
+  whyChooseAgent,
+} from '../data/site';
+
+const schema = {
+  '@type': 'WebPage',
+  name: 'Home',
+  url: siteConfig.url,
+  description: siteConfig.defaultDescription,
+};
+---
+
+<BaseLayout title={siteConfig.defaultTitle} description={siteConfig.defaultDescription} schema={schema}>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy" data-reveal>
+        <p class="eyebrow">Agen Resmi NoeSantara Wilayah Kebumen</p>
+        <h1>Agen Resmi NoeSantara di Kebumen untuk TerraGen dan PHC TaburMas</h1>
+        <p>
+          Masduki siap membantu konsultasi, pemesanan, dan pengembangan reseller lokal untuk wilayah
+          Kabupaten Kebumen, Jawa Tengah. Fokus website ini adalah mempermudah calon pembeli dan calon
+          mitra agar langsung terhubung ke titik kontak resmi daerah.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href={`${siteConfig.whatsappLink}?text=${encodeURIComponent('Halo Pak Masduki, saya ingin konsultasi produk TerraGen / PHC TaburMas untuk wilayah Kebumen.')}`} target="_blank" rel="noreferrer">Konsultasi via WhatsApp</a>
+          <a class="btn btn-outline" href="/galeri">Lihat Bukti Lapangan</a>
+        </div>
+        <ul class="hero-points">
+          <li>Official local agent untuk Kebumen dan area sekitar</li>
+          <li>Fokus pada penjelasan praktis, bukan bahasa korporat</li>
+          <li>Siap bantu produk, harga, area layanan, dan reseller</li>
+        </ul>
+      </div>
+
+      <div class="hero-visual" data-reveal>
+        <div class="hero-image-stack">
+          <img class="hero-image-main" src="/assets/hero/hero-main.jpeg" alt="Produk dan konteks pertanian NoeSantara untuk agen Kebumen" />
+          <img class="hero-image-float" src="/assets/hero/hero-float.jpeg" alt="Dokumentasi lapangan pertanian dan edukasi mitra" />
+          <div class="hero-badge-card">
+            <strong>{siteConfig.agentName}</strong>
+            <p>{siteConfig.role}</p>
+            <p>{siteConfig.region}</p>
+            <p>Siap membantu konsultasi, order, dan follow up reseller lokal.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container trust-strip">
+      {trustStrip.map((item) => (
+        <article class="trust-card" data-reveal>
+          <h3>{item}</h3>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Kondisi yang Sering Dihadapi"
+        title="Masalah lapangan yang sering membuat petani butuh arahan produk yang tepat"
+        description="Website ini dirancang untuk menjawab kebutuhan praktis calon pembeli di Kebumen: paham masalahnya dulu, lalu mudah menghubungi agen resmi wilayah."
+        center={true}
+      />
+      <div class="grid-3">
+        {painPoints.map((item) => (
+          <article class="info-card" data-reveal>
+            <h3>{item}</h3>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Produk Utama"
+        title="Fokus pada lini produk yang relevan dan praktis untuk dipasarkan saat ini"
+        description="TerraGen dan PHC TaburMas menjadi fokus utama karena paling mudah dijelaskan, dikonsultasikan, dan ditindaklanjuti untuk kebutuhan lapangan serta peluang reseller lokal."
+      />
+      <div class="product-grid">
+        {products.map((product) => (
+          <article class="product-card" data-reveal>
+            <div class="product-media">
+              <img src={product.image} alt={`${product.name} NoeSantara`} />
+            </div>
+            <div class="chip-row">
+              <span class="chip">{product.eyebrow}</span>
+            </div>
+            <h3>{product.name}</h3>
+            <p>{product.tagline}</p>
+            <p>{product.summary}</p>
+            <ul class="product-benefits icon-list">
+              {product.benefits.map((benefit) => (
+                <li>{benefit}</li>
+              ))}
+            </ul>
+            <div class="inline-actions">
+              <a class="btn btn-primary" href={`/${product.slug}`}>{product.name}</a>
+              <a class="btn btn-outline" href={`${siteConfig.whatsappLink}?text=${encodeURIComponent(`Halo Pak Masduki, saya ingin bertanya tentang ${product.name}.`)}`} target="_blank" rel="noreferrer">{product.cta}</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Kenapa Lewat Agen Lokal"
+        title="Lebih mudah dipercaya, lebih cepat dihubungi, dan lebih siap menindaklanjuti"
+        description="Peran website ini adalah mengubah legitimasi brand NoeSantara menjadi pengalaman lokal yang lebih personal dan lebih cepat direspons."
+        center={true}
+      />
+      <div class="grid-3">
+        {whyChooseAgent.map((item) => (
+          <article class="info-card" data-reveal>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Bukti Lapangan"
+        title="Preview dokumentasi produk, edukasi, dan konteks penggunaan di lapangan"
+        description="Konten visual membantu calon pembeli lebih yakin bahwa pembahasan produk dilakukan secara nyata dan dekat dengan kebutuhan budidaya."
+      />
+      <div class="proof-grid">
+        {galleryItems.slice(0, 6).map((item) => (
+          <article class="proof-card" data-reveal>
+            <img src={item.image} alt={item.alt} />
+            <div class="proof-card-body">
+              <div class="chip-row"><span class="chip">{item.category}</span></div>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+      <div class="inline-actions" style="margin-top: 1.5rem;">
+        <a class="btn btn-outline" href="/galeri">Lihat Galeri Lengkap</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container about-grid">
+      <div class="about-card" data-reveal>
+        <p class="eyebrow">Tentang Agen</p>
+        <h2>Masduki, titik kontak resmi NoeSantara untuk wilayah Kebumen</h2>
+        <p>
+          Website ini dibangun untuk memperjelas siapa yang melayani wilayah Kebumen, bagaimana cara
+          menghubungi agen resmi, dan bagaimana calon pembeli atau reseller dapat memulai percakapan secara
+          cepat dan praktis.
+        </p>
+        <ul class="service-list">
+          {serviceHighlights.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </div>
+      <div class="contact-card" data-reveal>
+        <h3>Data Agen</h3>
+        <p><strong>Nama:</strong> {siteConfig.agentName}</p>
+        <p><strong>Posisi:</strong> {siteConfig.role}</p>
+        <p><strong>Wilayah:</strong> {siteConfig.region}</p>
+        <p><strong>Alamat:</strong> {siteConfig.address}</p>
+        <div class="inline-actions">
+          <a class="btn btn-primary" href="/tentang-agen">Lihat Profil Agen</a>
+          <a class="btn btn-outline" href="/kontak">Halaman Kontak</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container cta-grid">
+      <div class="cta-card" data-reveal>
+        <p class="eyebrow">Jadi Reseller</p>
+        <h2>Ingin mengembangkan penjualan lokal di bawah agen Kebumen?</h2>
+        <p>
+          Peluang reseller difokuskan untuk calon mitra yang ingin bergerak lebih dekat ke komunitas tani,
+          toko pertanian, atau relasi usaha lokal dengan dukungan agen resmi daerah.
+        </p>
+        <a class="btn btn-primary" href="/kemitraan">Pelajari Kemitraan</a>
+      </div>
+      <div class="testimonials-grid">
+        {testimonials.map((item) => (
+          <article class="testimonial-card" data-reveal>
+            <p class="testimonial-quote">“{item.quote}”</p>
+            <h3>{item.name}</h3>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <SectionHeading
+        eyebrow="FAQ"
+        title="Tanya jawab yang paling sering muncul sebelum order atau daftar reseller"
+        center={true}
+      />
+      <FAQList items={faqs.home} />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta-card" data-reveal>
+        <p class="eyebrow">Final CTA</p>
+        <h2>Siap konsultasi, order, atau tanya peluang reseller NoeSantara di Kebumen?</h2>
+        <p>
+          Langsung hubungi Masduki melalui WhatsApp untuk pembahasan produk TerraGen, PHC TaburMas,
+          kebutuhan lahan, harga, atau pengembangan reseller lokal.
+        </p>
+        <div class="inline-actions">
+          <a class="btn btn-primary" href={`${siteConfig.whatsappLink}?text=${encodeURIComponent('Halo Pak Masduki, saya ingin konsultasi dan tanya penawaran produk NoeSantara.')}`} target="_blank" rel="noreferrer">Chat WhatsApp Sekarang</a>
+          <a class="btn btn-outline" href="/terragen">Lihat TerraGen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

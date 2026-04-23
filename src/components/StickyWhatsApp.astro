@@ -1,0 +1,13 @@
+---
+import { siteConfig } from '../data/site';
+---
+
+<a
+  class="sticky-whatsapp"
+  href={`${siteConfig.whatsappLink}?text=${encodeURIComponent(siteConfig.whatsappMessage)}`}
+  target="_blank"
+  rel="noreferrer"
+  aria-label={`Chat WhatsApp ${siteConfig.agentName}`}
+>
+  <span>WhatsApp</span>
+</a>
