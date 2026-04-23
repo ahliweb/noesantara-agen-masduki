@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="NoeSantara Kebumen">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Logo Agen Masduki">
   <rect width="64" height="64" rx="18" fill="#1f5a3b"/>
-  <path d="M18 42V22h7l14 16V22h7v20h-7L25 26v16z" fill="#f3ecd7"/>
+  <circle cx="32" cy="32" r="18" fill="none" stroke="#d7b46a" stroke-width="2.5"/>
+  <path d="M18 44V21h4.5L32 32l9.5-11H46v23h-5V29.5L33.7 38H30.3L23 29.5V44z" fill="#fffdf8"/>
+  <path d="M39.5 18.5c3.8-4 10-4.1 14.1-.5-.7 5.4-4.6 10.3-10.3 11.8-2 .5-4 .5-6 0 .2-4.3 1.1-7.5 2.2-11.3z" fill="#d7b46a"/>
 </svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Agen Resmi NoeSantara Kebumen - Masduki</title>
+  <desc id="desc">Gambar SEO dengan logo Agen Masduki, nama wilayah Kebumen, dan fokus produk TerraGen serta PHC TaburMas.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#133426"/>
+      <stop offset="55%" stop-color="#1f5a3b"/>
+      <stop offset="100%" stop-color="#2a7650"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f1e3bf"/>
+      <stop offset="100%" stop-color="#d7b46a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="190" cy="160" r="120" fill="rgba(255,255,255,0.05)"/>
+  <circle cx="1060" cy="520" r="170" fill="rgba(255,255,255,0.05)"/>
+  <rect x="72" y="72" width="240" height="240" rx="56" fill="#153828"/>
+  <circle cx="192" cy="192" r="82" fill="none" stroke="url(#gold)" stroke-width="8"/>
+  <path d="M129 242V140h18l45 52 45-52h18v102h-22v-63l-34 40h-13l-34-40v63z" fill="#fffdf8"/>
+  <path d="M224 129c15-16 39-16 54-2-3 20-17 38-39 44-8 2-16 2-24 0 1-18 4-28 9-42z" fill="url(#gold)"/>
+  <path d="M224 159c8-4 18-10 28-21" fill="none" stroke="#143927" stroke-width="4" stroke-linecap="round"/>
+  <text x="360" y="144" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="2.4" fill="#d7b46a">AGEN RESMI NOESANTARA WILAYAH KEBUMEN</text>
+  <text x="360" y="248" font-family="Fraunces, Georgia, serif" font-size="76" font-weight="700" fill="#fffdf8">Masduki</text>
+  <text x="360" y="310" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="600" fill="#e7f0e8">TerraGen dan PHC TaburMas</text>
+  <text x="360" y="376" font-family="Inter, Arial, sans-serif" font-size="28" fill="#dce7dc">Konsultasi, pemesanan, dan pengembangan reseller lokal</text>
+  <text x="360" y="420" font-family="Inter, Arial, sans-serif" font-size="28" fill="#dce7dc">Kabupaten Kebumen, Jawa Tengah</text>
+  <rect x="360" y="470" width="448" height="68" rx="34" fill="#d7b46a"/>
+  <text x="584" y="513" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="800" fill="#2c220d">wa.me/6281226679109</text>
+</svg>

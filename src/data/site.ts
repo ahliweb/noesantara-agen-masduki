@@ -1,6 +1,7 @@
 export const siteConfig = {
   siteName: 'Agen Resmi NoeSantara Kebumen',
   shortName: 'NoeSantara Kebumen',
+  logo: '/assets/branding/logo-agen-masduki.svg',
   companyName: 'Agen Resmi NoeSantara Wilayah Kebumen',
   titleSuffix: 'Agen Resmi NoeSantara Kebumen',
   url: 'https://agen.noesantara.co.id/kebumen-masduki',
@@ -18,7 +19,7 @@ export const siteConfig = {
   address:
     '(Al Mecca Shop/Masrufi) Jalan Belimbing RT 05 RW 06 No. 70 Pejagoan, Kec. Pejagoan, Kab. Kebumen, Jawa Tengah',
   serviceAreas: ['Kebumen', 'Pejagoan', 'Gombong', 'Kutowinangun', 'Prembun', 'Sekitarnya'],
-  ogImage: '/assets/og/agent-masduki-og.jpg',
+  ogImage: '/assets/branding/logo-agen-masduki-og.svg',
 };
 
 export const navItems = [
