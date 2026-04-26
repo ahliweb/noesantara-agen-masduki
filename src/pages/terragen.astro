@@ -13,14 +13,46 @@ const schema = {
 };
 
 const applicationGuides = [
-  { title: 'Padi', image: '/assets/terragen/cara-aplikasi-terragen-1.jpg' },
-  { title: 'Jagung', image: '/assets/terragen/cara-aplikasi-terragen-2.jpg' },
-  { title: 'Alpukat dan Durian', image: '/assets/terragen/cara-aplikasi-terragen-3.jpg' },
-  { title: 'Pala dan Kelapa Sawit', image: '/assets/terragen/cara-aplikasi-terragen-4.jpg' },
-  { title: 'Cabai', image: '/assets/terragen/cara-aplikasi-terragen-5.jpg' },
-  { title: 'Pepaya', image: '/assets/terragen/cara-aplikasi-terragen-6.jpg' },
-  { title: 'Pohon Karet', image: '/assets/terragen/cara-aplikasi-terragen-7.jpg' },
-  { title: 'Bawang Merah', image: '/assets/terragen/cara-aplikasi-terragen-8.jpg' },
+  {
+    title: 'Padi',
+    caption: 'Panduan fase awal sampai menjelang bunting untuk membantu tanaman padi tumbuh lebih siap dan seragam.',
+    image: '/assets/terragen/cara-aplikasi-terragen-1.jpg',
+  },
+  {
+    title: 'Jagung',
+    caption: 'Arahan aplikasi untuk pertumbuhan awal, pembentukan daun, batang, dan persiapan tongkol yang lebih maksimal.',
+    image: '/assets/terragen/cara-aplikasi-terragen-2.jpg',
+  },
+  {
+    title: 'Alpukat dan Durian',
+    caption: 'Panduan kocor dan spray untuk tanaman buah agar akar, batang, dan daun mendapat dukungan nutrisi lebih baik.',
+    image: '/assets/terragen/cara-aplikasi-terragen-3.jpg',
+  },
+  {
+    title: 'Pala dan Kelapa Sawit',
+    caption: 'Rekomendasi aplikasi berkala untuk membantu kesuburan area perakaran dan produktivitas tanaman kebun.',
+    image: '/assets/terragen/cara-aplikasi-terragen-4.jpg',
+  },
+  {
+    title: 'Cabai',
+    caption: 'Panduan dari persiapan media sampai fase berbuah untuk membantu cabai tumbuh kuat dan produktif.',
+    image: '/assets/terragen/cara-aplikasi-terragen-5.jpg',
+  },
+  {
+    title: 'Pepaya',
+    caption: 'Arahan aplikasi untuk pepaya muda dan dewasa agar pertumbuhan lebih stabil dan panen lebih berkualitas.',
+    image: '/assets/terragen/cara-aplikasi-terragen-6.jpg',
+  },
+  {
+    title: 'Pohon Karet',
+    caption: 'Panduan kocor akar untuk membantu pertumbuhan batang dan mendukung produksi getah secara lebih optimal.',
+    image: '/assets/terragen/cara-aplikasi-terragen-7.jpg',
+  },
+  {
+    title: 'Bawang Merah',
+    caption: 'Rangkaian aplikasi dari sebelum tanam hingga pembesaran umbi untuk mendukung hasil panen lebih padat.',
+    image: '/assets/terragen/cara-aplikasi-terragen-8.jpg',
+  },
 ];
 
 const whatsappTerraGen = `${siteConfig.whatsappLink}?text=${encodeURIComponent('Halo Pak Masduki, saya ingin konsultasi TerraGen untuk kondisi lahan saya.')}`;
@@ -31,10 +63,10 @@ const whatsappTerraGen = `${siteConfig.whatsappLink}?text=${encodeURIComponent('
     <div class="container terragen-hero-grid">
       <div class="terragen-hero-copy" data-reveal>
         <p class="eyebrow">TerraGen Kebumen</p>
-        <h1>Pembenah tanah untuk lahan yang ingin kembali siap ditanami lebih optimal</h1>
+        <h1>TerraGen bantu tanah lebih siap, akar lebih nyaman, hasil budidaya lebih terarah</h1>
         <p>
-          TerraGen membantu petani memulai perbaikan kondisi tanah, kesiapan akar, dan pola aplikasi berdasarkan
-          komoditas. Konsultasi dan pemesanan wilayah Kebumen diarahkan langsung ke Masduki sebagai agen resmi.
+          Kalau tanah mulai keras, tanaman lambat naik, atau pemupukan terasa belum maksimal, TerraGen bisa menjadi
+          langkah awal untuk membenahi media tanam. Konsultasi wilayah Kebumen langsung dibantu Masduki, agen resmi NoeSantara.
         </p>
         <div class="terragen-hero-actions">
           <a class="btn btn-primary" href={whatsappTerraGen} target="_blank" rel="noreferrer">Konsultasi TerraGen</a>
@@ -42,8 +74,8 @@ const whatsappTerraGen = `${siteConfig.whatsappLink}?text=${encodeURIComponent('
         </div>
         <div class="terragen-trust-row" aria-label="Ringkasan layanan TerraGen">
           <span>Agen resmi Kebumen</span>
-          <span>Panduan per komoditas</span>
-          <span>Order via WhatsApp</span>
+          <span>Panduan aplikasi jelas</span>
+          <span>Bisa tanya dulu sebelum order</span>
         </div>
       </div>
 
@@ -53,12 +85,12 @@ const whatsappTerraGen = `${siteConfig.whatsappLink}?text=${encodeURIComponent('
           <div>
             <span class="chip">Pembenah Tanah</span>
             <h2>TerraGen</h2>
-            <p>Untuk pembahasan tanah keras, kualitas lahan menurun, dan akar yang perlu dukungan lebih baik.</p>
+            <p>Solusi praktis untuk membantu memperbaiki kondisi tanah dan mendukung pertumbuhan tanaman sejak akar.</p>
           </div>
         </div>
         <div class="terragen-mini-card">
-          <strong>Mulai dari kondisi lahan</strong>
-          <span>Sebutkan komoditas, umur tanaman, dan kendala utama saat konsultasi.</span>
+          <strong>Konsultasi lebih tepat sasaran</strong>
+          <span>Ceritakan komoditas, umur tanaman, dan kendala lahan agar arahan tidak asal tebak.</span>
         </div>
       </div>
     </div>
@@ -66,22 +98,22 @@ const whatsappTerraGen = `${siteConfig.whatsappLink}?text=${encodeURIComponent('
 
   <section class="section terragen-section-tight">
     <div class="container">
-      <SectionHeading eyebrow="Kapan Relevan" title="TerraGen paling tepat dibahas saat petani mulai melihat sinyal lahan kurang sehat" center={true} />
+      <SectionHeading eyebrow="Kapan Relevan" title="Saat lahan mulai memberi tanda, jangan tunggu tanaman makin berat dipulihkan" center={true} />
       <div class="terragen-signal-grid">
         <article class="terragen-signal-card" data-reveal>
           <span>01</span>
-          <h3>Tanah berat atau keras</h3>
-          <p>Media tanam terasa kurang nyaman untuk perkembangan akar dan butuh pembenahan bertahap.</p>
+          <h3>Tanah mulai keras</h3>
+          <p>Cocok dibahas saat tanah terasa padat, susah diolah, atau akar tanaman terlihat kurang leluasa berkembang.</p>
         </article>
         <article class="terragen-signal-card" data-reveal>
           <span>02</span>
-          <h3>Pertumbuhan awal lambat</h3>
-          <p>Tanaman kurang seragam, akar belum kuat, atau respons pemupukan belum sesuai harapan.</p>
+          <h3>Tanaman kurang responsif</h3>
+          <p>Ketika pemupukan sudah dilakukan tetapi pertumbuhan belum sesuai harapan, kondisi tanah perlu ikut diperhatikan.</p>
         </article>
         <article class="terragen-signal-card" data-reveal>
           <span>03</span>
-          <h3>Butuh pola aplikasi jelas</h3>
-          <p>Setiap komoditas punya kebutuhan berbeda, jadi arahan awal sebaiknya disesuaikan kondisi lapangan.</p>
+          <h3>Ingin aplikasi lebih yakin</h3>
+          <p>Panduan per komoditas membantu petani memulai dengan alur yang lebih mudah dipahami dan tidak membingungkan.</p>
         </article>
       </div>
     </div>
@@ -91,22 +123,38 @@ const whatsappTerraGen = `${siteConfig.whatsappLink}?text=${encodeURIComponent('
     <div class="container">
       <SectionHeading
         eyebrow="Cara Aplikasi"
-        title="Panduan aplikasi TerraGen berdasarkan komoditas"
-        description="Setiap gambar berasal dari halaman PDF panduan aplikasi TerraGen. Buka bagian ini saat ingin mencocokkan komoditas sebelum menghubungi agen."
+        title="Pilih panduan sesuai tanaman Anda, lalu klik gambar untuk zoom lebih jelas"
+        description="Kartu panduan dibuat lebih ringkas agar mudah dipindai. Klik salah satu gambar untuk membuka tampilan besar dan membaca detail dosis aplikasi dengan nyaman."
         center={true}
       />
       <div class="application-guide-grid">
         {applicationGuides.map((guide, index) => (
           <article class="application-guide-card" data-reveal>
-            <a href={guide.image} target="_blank" rel="noreferrer" aria-label={`Buka panduan aplikasi TerraGen untuk ${guide.title}`}>
-              <img src={guide.image} alt={`Panduan aplikasi TerraGen untuk ${guide.title}`} loading="lazy" width="1190" height="1684" />
-            </a>
+            <button class="application-guide-button" type="button" data-guide-image={guide.image} data-guide-title={guide.title} data-guide-caption={guide.caption} aria-label={`Perbesar panduan aplikasi TerraGen untuk ${guide.title}`}>
+              <span class="application-guide-media">
+                <img src={guide.image} alt={`Panduan aplikasi TerraGen untuk ${guide.title}`} loading="lazy" width="1190" height="1684" />
+              </span>
+            </button>
             <div class="application-guide-caption">
               <span>Panduan {String(index + 1).padStart(2, '0')}</span>
               <h3>{guide.title}</h3>
+              <p>{guide.caption}</p>
+              <small>Klik gambar untuk memperbesar</small>
             </div>
           </article>
         ))}
+      </div>
+
+      <div class="application-guide-modal" data-guide-modal hidden>
+        <div class="application-guide-modal-backdrop" data-guide-close></div>
+        <div class="application-guide-modal-panel" role="dialog" aria-modal="true" aria-labelledby="guide-modal-title">
+          <button class="application-guide-modal-close" type="button" data-guide-close aria-label="Tutup gambar panduan">Tutup</button>
+          <img data-guide-modal-image src="" alt="" />
+          <div class="application-guide-modal-caption">
+            <h3 id="guide-modal-title" data-guide-modal-title></h3>
+            <p data-guide-modal-caption></p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -116,16 +164,16 @@ const whatsappTerraGen = `${siteConfig.whatsappLink}?text=${encodeURIComponent('
       <div class="terragen-process-card" data-reveal>
         <div>
           <p class="eyebrow">Alur Konsultasi</p>
-          <h2>Mulai dari cerita kondisi lahan, bukan langsung menebak dosis</h2>
+          <h2>Tanya dulu, baru tentukan pola aplikasi yang paling masuk akal</h2>
           <p>
-            Agar rekomendasi lebih relevan, sampaikan komoditas, umur tanaman, kondisi tanah, dan tujuan aplikasi.
-            Setelah itu agen dapat membantu mengarahkan pola penggunaan dan kebutuhan order.
+            Setiap lahan punya cerita berbeda. Dengan konsultasi singkat, Anda bisa mendapat arahan yang lebih relevan
+            sebelum menentukan kebutuhan produk dan ritme aplikasi.
           </p>
         </div>
         <ol class="terragen-process-list">
-          <li><span>1</span>Sebutkan komoditas dan fase tanam.</li>
-          <li><span>2</span>Jelaskan kendala tanah atau pertumbuhan.</li>
-          <li><span>3</span>Minta arahan penggunaan dan ketersediaan produk.</li>
+          <li><span>1</span>Ceritakan komoditas dan umur tanaman.</li>
+          <li><span>2</span>Sampaikan kendala tanah atau pertumbuhan.</li>
+          <li><span>3</span>Dapatkan arahan aplikasi dan info stok produk.</li>
         </ol>
         <a class="btn btn-primary" href={whatsappTerraGen} target="_blank" rel="noreferrer">Tanya Sekarang</a>
       </div>
@@ -134,18 +182,18 @@ const whatsappTerraGen = `${siteConfig.whatsappLink}?text=${encodeURIComponent('
 
   <section class="section section-alt">
     <div class="container">
-      <SectionHeading eyebrow="Cocok Untuk" title="Kebutuhan yang umum dibahas dengan TerraGen" center={true} />
+      <SectionHeading eyebrow="Cocok Untuk" title="TerraGen fleksibel untuk berbagai kebutuhan budidaya" center={true} />
       <div class="grid-3">
-        <article class="info-card" data-reveal><h3>Hortikultura</h3><p>Cabai, tomat, dan komoditas lain yang sensitif terhadap kualitas media tanam dan perkembangan akar.</p></article>
-        <article class="info-card" data-reveal><h3>Tanaman Pangan</h3><p>Padi, jagung, dan komoditas budidaya yang membutuhkan pondasi tanah lebih siap sejak awal.</p></article>
-        <article class="info-card" data-reveal><h3>Kebun Intensif</h3><p>Relevan bagi lahan yang sudah lama diolah dan memerlukan pendekatan pembenahan yang lebih sistematis.</p></article>
+        <article class="info-card" data-reveal><h3>Hortikultura</h3><p>Untuk cabai, tomat, bawang, dan tanaman bernilai tinggi yang membutuhkan media tanam lebih siap sejak awal.</p></article>
+        <article class="info-card" data-reveal><h3>Tanaman Pangan</h3><p>Untuk padi dan jagung yang memerlukan pondasi tanah lebih baik agar pertumbuhan lebih seragam.</p></article>
+        <article class="info-card" data-reveal><h3>Tanaman Kebun</h3><p>Untuk tanaman tahunan dan kebun intensif yang membutuhkan perawatan akar dan kesuburan tanah secara berkala.</p></article>
       </div>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <SectionHeading eyebrow="Proof Terkait" title="Dokumentasi lapangan untuk bahan diskusi awal" description="Gunakan dokumentasi berikut sebagai konteks saat bertanya tentang kondisi lahan, komoditas, dan arah pemakaian TerraGen." />
+      <SectionHeading eyebrow="Bukti Lapangan" title="Lihat konteks penggunaan di lapangan sebelum Anda konsultasi" description="Dokumentasi ini membantu Anda membayangkan bagaimana TerraGen dibahas untuk komoditas, kondisi lahan, dan target budidaya yang berbeda." />
       <div class="gallery-grid">
         {galleryItems.slice(0, 4).map((item) => (
           <article class="gallery-card" data-reveal>
@@ -163,7 +211,7 @@ const whatsappTerraGen = `${siteConfig.whatsappLink}?text=${encodeURIComponent('
 
   <section class="section section-alt">
     <div class="container">
-      <SectionHeading eyebrow="FAQ TerraGen" title="Pertanyaan yang sering diajukan" center={true} />
+      <SectionHeading eyebrow="FAQ TerraGen" title="Masih ragu? Ini jawaban singkat sebelum Anda menghubungi agen" center={true} />
       <FAQList items={faqs.terragen} />
     </div>
   </section>
@@ -173,8 +221,8 @@ const whatsappTerraGen = `${siteConfig.whatsappLink}?text=${encodeURIComponent('
       <div class="cta-card cta-grid" data-reveal>
         <div>
           <p class="eyebrow">Siap Konsultasi?</p>
-          <h2>Tanyakan TerraGen langsung ke agen resmi Kebumen</h2>
-          <p class="lede">Kirim kondisi lahan dan komoditas Anda agar arahan awal lebih cepat dan tidak terlalu umum.</p>
+          <h2>Mulai benahi lahan Anda bersama TerraGen</h2>
+          <p class="lede">Kirim kondisi lahan, komoditas, dan target budidaya Anda. Masduki akan bantu arahkan langkah awal yang paling relevan.</p>
         </div>
         <div class="inline-actions">
           <a class="btn btn-primary" href={whatsappTerraGen} target="_blank" rel="noreferrer">WhatsApp Masduki</a>
@@ -183,4 +231,41 @@ const whatsappTerraGen = `${siteConfig.whatsappLink}?text=${encodeURIComponent('
       </div>
     </div>
   </section>
+
+  <script>
+    const modal = document.querySelector('[data-guide-modal]');
+    const modalImage = document.querySelector('[data-guide-modal-image]');
+    const modalTitle = document.querySelector('[data-guide-modal-title]');
+    const modalCaption = document.querySelector('[data-guide-modal-caption]');
+    const guideButtons = document.querySelectorAll('[data-guide-image]');
+    const closeButtons = document.querySelectorAll('[data-guide-close]');
+
+    const closeGuideModal = () => {
+      if (!modal) return;
+      modal.setAttribute('hidden', '');
+      document.body.classList.remove('is-guide-modal-open');
+    };
+
+    guideButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        if (!modal || !(modalImage instanceof HTMLImageElement) || !modalTitle || !modalCaption) return;
+
+        const image = button.getAttribute('data-guide-image') || '';
+        const title = button.getAttribute('data-guide-title') || 'Panduan TerraGen';
+        const caption = button.getAttribute('data-guide-caption') || '';
+
+        modalImage.src = image;
+        modalImage.alt = `Panduan aplikasi TerraGen untuk ${title}`;
+        modalTitle.textContent = title;
+        modalCaption.textContent = caption;
+        modal.removeAttribute('hidden');
+        document.body.classList.add('is-guide-modal-open');
+      });
+    });
+
+    closeButtons.forEach((button) => button.addEventListener('click', closeGuideModal));
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeGuideModal();
+    });
+  </script>
 </BaseLayout>

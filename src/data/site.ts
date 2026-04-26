@@ -189,16 +189,16 @@ export const faqs = {
   ],
   terragen: [
     {
-      q: 'TerraGen cocok untuk kondisi seperti apa?',
-      a: 'TerraGen relevan saat lahan terasa berat, kualitas tanah menurun, atau petani ingin memperbaiki kesiapan media tanam agar akar bekerja lebih baik.',
+      q: 'Kapan sebaiknya mulai mempertimbangkan TerraGen?',
+      a: 'TerraGen layak dibahas ketika tanah mulai terasa keras, tanaman kurang responsif, atau Anda ingin menyiapkan media tanam yang lebih nyaman untuk perkembangan akar.',
     },
     {
-      q: 'Apakah TerraGen hanya untuk satu jenis tanaman?',
-      a: 'Tidak. Konsultasi bisa diarahkan untuk hortikultura, tanaman pangan, maupun kebutuhan kebun, dengan penyesuaian pendekatan penggunaan.',
+      q: 'Apakah TerraGen bisa untuk banyak komoditas?',
+      a: 'Bisa. Panduan aplikasi tersedia untuk padi, jagung, cabai, bawang merah, pepaya, karet, sawit, dan beberapa tanaman buah. Arahan tetap sebaiknya disesuaikan dengan kondisi lahan.',
     },
     {
-      q: 'Bagaimana cara mulai memakainya?',
-      a: 'Langkah paling aman adalah diskusi singkat terlebih dahulu melalui WhatsApp agar arahan awal disesuaikan dengan kondisi lapangan dan tujuan aplikasi.',
+      q: 'Apakah boleh konsultasi dulu sebelum membeli?',
+      a: 'Sangat disarankan. Kirim komoditas, umur tanaman, dan kendala utama lewat WhatsApp agar Masduki bisa membantu memberi arahan awal sebelum Anda menentukan kebutuhan order.',
     },
   ],
   taburmas: [
