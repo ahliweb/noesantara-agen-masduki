@@ -13,65 +13,96 @@ const schema = {
 };
 
 const applicationGuides = [
-  { title: 'Aplikasi TerraGen pada Tanaman Padi', image: '/assets/terragen/cara-aplikasi-terragen-1.jpg' },
-  { title: 'Aplikasi TerraGen pada Tanaman Jagung', image: '/assets/terragen/cara-aplikasi-terragen-2.jpg' },
-  { title: 'Aplikasi TerraGen pada Alpukat dan Durian', image: '/assets/terragen/cara-aplikasi-terragen-3.jpg' },
-  { title: 'Aplikasi TerraGen pada Pala dan Kelapa Sawit', image: '/assets/terragen/cara-aplikasi-terragen-4.jpg' },
-  { title: 'Aplikasi TerraGen pada Tanaman Cabai', image: '/assets/terragen/cara-aplikasi-terragen-5.jpg' },
-  { title: 'Aplikasi TerraGen pada Tanaman Pepaya', image: '/assets/terragen/cara-aplikasi-terragen-6.jpg' },
-  { title: 'Aplikasi TerraGen pada Pohon Karet', image: '/assets/terragen/cara-aplikasi-terragen-7.jpg' },
-  { title: 'Aplikasi TerraGen pada Bawang Merah', image: '/assets/terragen/cara-aplikasi-terragen-8.jpg' },
+  { title: 'Padi', image: '/assets/terragen/cara-aplikasi-terragen-1.jpg' },
+  { title: 'Jagung', image: '/assets/terragen/cara-aplikasi-terragen-2.jpg' },
+  { title: 'Alpukat dan Durian', image: '/assets/terragen/cara-aplikasi-terragen-3.jpg' },
+  { title: 'Pala dan Kelapa Sawit', image: '/assets/terragen/cara-aplikasi-terragen-4.jpg' },
+  { title: 'Cabai', image: '/assets/terragen/cara-aplikasi-terragen-5.jpg' },
+  { title: 'Pepaya', image: '/assets/terragen/cara-aplikasi-terragen-6.jpg' },
+  { title: 'Pohon Karet', image: '/assets/terragen/cara-aplikasi-terragen-7.jpg' },
+  { title: 'Bawang Merah', image: '/assets/terragen/cara-aplikasi-terragen-8.jpg' },
 ];
+
+const whatsappTerraGen = `${siteConfig.whatsappLink}?text=${encodeURIComponent('Halo Pak Masduki, saya ingin konsultasi TerraGen untuk kondisi lahan saya.')}`;
 ---
 
 <BaseLayout title="TerraGen Kebumen" description="Penjelasan TerraGen secara praktis untuk wilayah Kebumen. Cocok untuk konsultasi tanah keras, lahan menurun kualitasnya, dan kebutuhan order melalui agen resmi NoeSantara." image="/assets/produk/terragen-produk-1.jpeg" schema={schema}>
-  <section class="page-hero">
-    <div class="container page-hero-grid">
-      <div class="page-hero-copy" data-reveal>
+  <section class="terragen-hero">
+    <div class="container terragen-hero-grid">
+      <div class="terragen-hero-copy" data-reveal>
         <p class="eyebrow">TerraGen Kebumen</p>
-        <h1>TerraGen untuk petani yang ingin mulai membenahi kondisi tanah secara lebih terarah</h1>
+        <h1>Pembenah tanah untuk lahan yang ingin kembali siap ditanami lebih optimal</h1>
         <p>
-          TerraGen diposisikan sebagai solusi pembenah tanah yang relevan ketika lahan terasa keras,
-          kualitasnya menurun, atau perakaran tanaman perlu didukung agar penyerapan hara lebih siap.
-          Untuk wilayah Kebumen, konsultasi dan pemesanan ditangani langsung oleh Masduki sebagai agen resmi.
+          TerraGen membantu petani memulai perbaikan kondisi tanah, kesiapan akar, dan pola aplikasi berdasarkan
+          komoditas. Konsultasi dan pemesanan wilayah Kebumen diarahkan langsung ke Masduki sebagai agen resmi.
         </p>
-        <div class="inline-actions">
-          <a class="btn btn-primary" href={`${siteConfig.whatsappLink}?text=${encodeURIComponent('Halo Pak Masduki, saya ingin konsultasi TerraGen untuk kondisi lahan saya.')}`} target="_blank" rel="noreferrer">Tanya TerraGen via WhatsApp</a>
-          <a class="btn btn-outline" href="/galeri">Lihat Bukti Lapangan</a>
+        <div class="terragen-hero-actions">
+          <a class="btn btn-primary" href={whatsappTerraGen} target="_blank" rel="noreferrer">Konsultasi TerraGen</a>
+          <a class="btn btn-outline" href="#cara-aplikasi">Lihat Cara Aplikasi</a>
+        </div>
+        <div class="terragen-trust-row" aria-label="Ringkasan layanan TerraGen">
+          <span>Agen resmi Kebumen</span>
+          <span>Panduan per komoditas</span>
+          <span>Order via WhatsApp</span>
         </div>
       </div>
-      <img class="page-hero-image" src="/assets/produk/terragen-produk-1.jpeg" alt="Kemasan TerraGen NoeSantara" data-reveal />
-    </div>
-  </section>
 
-  <section class="section section-alt">
-    <div class="container split-grid">
-      <div class="surface-card" style="padding: 1.5rem;" data-reveal>
-        <SectionHeading eyebrow="Masalah yang Dibahas" title="Kapan TerraGen biasanya mulai relevan untuk ditanyakan?" />
-        <ul class="icon-list">
-          <li>Saat tanah terasa berat, keras, atau kurang nyaman untuk perkembangan akar.</li>
-          <li>Saat petani ingin memulai perbaikan kondisi lahan secara bertahap dan lebih terarah.</li>
-          <li>Saat ingin membangun pondasi budidaya yang lebih siap sebelum mengejar performa tanaman.</li>
-        </ul>
-      </div>
-      <div class="surface-card" style="padding: 1.5rem;" data-reveal>
-        <SectionHeading eyebrow="Yang Perlu Dipahami" title="Mengapa pembahasan TerraGen sebaiknya praktis dan kontekstual?" />
-        <p class="lede">
-          Karena kondisi lahan, komoditas, dan tujuan aplikasi bisa berbeda. Website ini tidak mendorong klaim
-          berlebihan, tetapi mengarahkan calon pembeli untuk memulai percakapan yang lebih relevan dengan kondisi nyata.
-        </p>
+      <div class="terragen-hero-visual" data-reveal>
+        <div class="terragen-product-card">
+          <img src="/assets/produk/terragen-produk-1.jpeg" alt="Kemasan TerraGen NoeSantara" />
+          <div>
+            <span class="chip">Pembenah Tanah</span>
+            <h2>TerraGen</h2>
+            <p>Untuk pembahasan tanah keras, kualitas lahan menurun, dan akar yang perlu dukungan lebih baik.</p>
+          </div>
+        </div>
+        <div class="terragen-mini-card">
+          <strong>Mulai dari kondisi lahan</strong>
+          <span>Sebutkan komoditas, umur tanaman, dan kendala utama saat konsultasi.</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section terragen-section-tight">
     <div class="container">
-      <SectionHeading eyebrow="Cara Aplikasi" title="Panduan aplikasi TerraGen berdasarkan komoditas" center={true} />
+      <SectionHeading eyebrow="Kapan Relevan" title="TerraGen paling tepat dibahas saat petani mulai melihat sinyal lahan kurang sehat" center={true} />
+      <div class="terragen-signal-grid">
+        <article class="terragen-signal-card" data-reveal>
+          <span>01</span>
+          <h3>Tanah berat atau keras</h3>
+          <p>Media tanam terasa kurang nyaman untuk perkembangan akar dan butuh pembenahan bertahap.</p>
+        </article>
+        <article class="terragen-signal-card" data-reveal>
+          <span>02</span>
+          <h3>Pertumbuhan awal lambat</h3>
+          <p>Tanaman kurang seragam, akar belum kuat, atau respons pemupukan belum sesuai harapan.</p>
+        </article>
+        <article class="terragen-signal-card" data-reveal>
+          <span>03</span>
+          <h3>Butuh pola aplikasi jelas</h3>
+          <p>Setiap komoditas punya kebutuhan berbeda, jadi arahan awal sebaiknya disesuaikan kondisi lapangan.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="cara-aplikasi">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Cara Aplikasi"
+        title="Panduan aplikasi TerraGen berdasarkan komoditas"
+        description="Setiap gambar berasal dari halaman PDF panduan aplikasi TerraGen. Buka bagian ini saat ingin mencocokkan komoditas sebelum menghubungi agen."
+        center={true}
+      />
       <div class="application-guide-grid">
-        {applicationGuides.map((guide) => (
+        {applicationGuides.map((guide, index) => (
           <article class="application-guide-card" data-reveal>
-            <img src={guide.image} alt={guide.title} loading="lazy" width="1190" height="1684" />
+            <a href={guide.image} target="_blank" rel="noreferrer" aria-label={`Buka panduan aplikasi TerraGen untuk ${guide.title}`}>
+              <img src={guide.image} alt={`Panduan aplikasi TerraGen untuk ${guide.title}`} loading="lazy" width="1190" height="1684" />
+            </a>
             <div class="application-guide-caption">
+              <span>Panduan {String(index + 1).padStart(2, '0')}</span>
               <h3>{guide.title}</h3>
             </div>
           </article>
@@ -82,38 +113,39 @@ const applicationGuides = [
 
   <section class="section">
     <div class="container">
-      <SectionHeading eyebrow="Cocok Untuk" title="TerraGen cocok dibahas untuk beberapa kebutuhan berikut" center={true} />
-      <div class="grid-3">
-        <article class="info-card" data-reveal><h3>Hortikultura</h3><p>Cabai, tomat, dan komoditas lain yang sensitif terhadap kualitas media tanam dan perkembangan akar.</p></article>
-        <article class="info-card" data-reveal><h3>Tanaman Pangan</h3><p>Pembahasan awal dapat diarahkan untuk kebutuhan tanah pada komoditas budidaya yang membutuhkan efisiensi serapan hara.</p></article>
-        <article class="info-card" data-reveal><h3>Kebun dan Lahan Intensif</h3><p>Relevan bagi lahan yang sudah lama diolah dan memerlukan pendekatan pembenahan yang lebih sistematis.</p></article>
+      <div class="terragen-process-card" data-reveal>
+        <div>
+          <p class="eyebrow">Alur Konsultasi</p>
+          <h2>Mulai dari cerita kondisi lahan, bukan langsung menebak dosis</h2>
+          <p>
+            Agar rekomendasi lebih relevan, sampaikan komoditas, umur tanaman, kondisi tanah, dan tujuan aplikasi.
+            Setelah itu agen dapat membantu mengarahkan pola penggunaan dan kebutuhan order.
+          </p>
+        </div>
+        <ol class="terragen-process-list">
+          <li><span>1</span>Sebutkan komoditas dan fase tanam.</li>
+          <li><span>2</span>Jelaskan kendala tanah atau pertumbuhan.</li>
+          <li><span>3</span>Minta arahan penggunaan dan ketersediaan produk.</li>
+        </ol>
+        <a class="btn btn-primary" href={whatsappTerraGen} target="_blank" rel="noreferrer">Tanya Sekarang</a>
       </div>
     </div>
   </section>
 
   <section class="section section-alt">
-    <div class="container split-grid">
-      <div class="surface-card" style="padding: 1.5rem;" data-reveal>
-        <SectionHeading eyebrow="Panduan Awal" title="Arah penggunaan awal yang aman untuk dibahas" />
-        <ol class="step-list">
-          <li>Sampaikan jenis komoditas dan masalah utama di lahan saat menghubungi WhatsApp.</li>
-          <li>Jelaskan target penggunaan, misalnya pembenahan tanah atau dukungan pertumbuhan awal.</li>
-          <li>Minta arahan awal dari agen sebelum menentukan pola aplikasi dan kebutuhan order.</li>
-        </ol>
-      </div>
-      <div class="surface-card" style="padding: 1.5rem;" data-reveal>
-        <SectionHeading eyebrow="Arah Konversi" title="Kenapa halaman ini dibuat pendekatan lokal?" />
-        <p class="lede">
-          Supaya calon pembeli di Kebumen tidak harus mencari jalur pusat lebih dulu. Semua CTA diarahkan ke
-          agen resmi wilayah agar proses tanya, order, dan tindak lanjut menjadi lebih cepat dan lebih dekat.
-        </p>
+    <div class="container">
+      <SectionHeading eyebrow="Cocok Untuk" title="Kebutuhan yang umum dibahas dengan TerraGen" center={true} />
+      <div class="grid-3">
+        <article class="info-card" data-reveal><h3>Hortikultura</h3><p>Cabai, tomat, dan komoditas lain yang sensitif terhadap kualitas media tanam dan perkembangan akar.</p></article>
+        <article class="info-card" data-reveal><h3>Tanaman Pangan</h3><p>Padi, jagung, dan komoditas budidaya yang membutuhkan pondasi tanah lebih siap sejak awal.</p></article>
+        <article class="info-card" data-reveal><h3>Kebun Intensif</h3><p>Relevan bagi lahan yang sudah lama diolah dan memerlukan pendekatan pembenahan yang lebih sistematis.</p></article>
       </div>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <SectionHeading eyebrow="Proof Terkait" title="Contoh bukti lapangan yang relevan untuk percakapan TerraGen" />
+      <SectionHeading eyebrow="Proof Terkait" title="Dokumentasi lapangan untuk bahan diskusi awal" description="Gunakan dokumentasi berikut sebagai konteks saat bertanya tentang kondisi lahan, komoditas, dan arah pemakaian TerraGen." />
       <div class="gallery-grid">
         {galleryItems.slice(0, 4).map((item) => (
           <article class="gallery-card" data-reveal>
@@ -133,6 +165,22 @@ const applicationGuides = [
     <div class="container">
       <SectionHeading eyebrow="FAQ TerraGen" title="Pertanyaan yang sering diajukan" center={true} />
       <FAQList items={faqs.terragen} />
+    </div>
+  </section>
+
+  <section class="section terragen-final-cta">
+    <div class="container">
+      <div class="cta-card cta-grid" data-reveal>
+        <div>
+          <p class="eyebrow">Siap Konsultasi?</p>
+          <h2>Tanyakan TerraGen langsung ke agen resmi Kebumen</h2>
+          <p class="lede">Kirim kondisi lahan dan komoditas Anda agar arahan awal lebih cepat dan tidak terlalu umum.</p>
+        </div>
+        <div class="inline-actions">
+          <a class="btn btn-primary" href={whatsappTerraGen} target="_blank" rel="noreferrer">WhatsApp Masduki</a>
+          <a class="btn btn-outline" href="/kontak">Lihat Kontak Agen</a>
+        </div>
+      </div>
     </div>
   </section>
 </BaseLayout>
