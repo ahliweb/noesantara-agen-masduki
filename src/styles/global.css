@@ -504,6 +504,12 @@ main {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.application-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
 .stats-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
@@ -541,6 +547,28 @@ main {
 .proof-card,
 .gallery-card {
   overflow: hidden;
+}
+
+.application-guide-card {
+  overflow: hidden;
+  background: rgba(255, 253, 248, 0.9);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.application-guide-card img {
+  width: 100%;
+  height: auto;
+}
+
+.application-guide-caption {
+  padding: 1rem 1.25rem;
+}
+
+.application-guide-caption h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
 }
 
 .proof-card-body,
@@ -777,6 +805,7 @@ a:focus {
   .stats-grid,
   .timeline-grid,
   .gallery-grid,
+  .application-guide-grid,
   .footer-grid,
   .form-grid {
     grid-template-columns: 1fr;

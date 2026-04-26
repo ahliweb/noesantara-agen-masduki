@@ -11,6 +11,17 @@ const schema = {
     'TerraGen dibahas secara praktis untuk membantu petani Kebumen memahami manfaat pembenahan tanah dan langkah awal konsultasinya.',
   brand: { '@type': 'Brand', name: 'NoeSantara' },
 };
+
+const applicationGuides = [
+  { title: 'Aplikasi TerraGen pada Tanaman Padi', image: '/assets/terragen/cara-aplikasi-terragen-1.jpg' },
+  { title: 'Aplikasi TerraGen pada Tanaman Jagung', image: '/assets/terragen/cara-aplikasi-terragen-2.jpg' },
+  { title: 'Aplikasi TerraGen pada Alpukat dan Durian', image: '/assets/terragen/cara-aplikasi-terragen-3.jpg' },
+  { title: 'Aplikasi TerraGen pada Pala dan Kelapa Sawit', image: '/assets/terragen/cara-aplikasi-terragen-4.jpg' },
+  { title: 'Aplikasi TerraGen pada Tanaman Cabai', image: '/assets/terragen/cara-aplikasi-terragen-5.jpg' },
+  { title: 'Aplikasi TerraGen pada Tanaman Pepaya', image: '/assets/terragen/cara-aplikasi-terragen-6.jpg' },
+  { title: 'Aplikasi TerraGen pada Pohon Karet', image: '/assets/terragen/cara-aplikasi-terragen-7.jpg' },
+  { title: 'Aplikasi TerraGen pada Bawang Merah', image: '/assets/terragen/cara-aplikasi-terragen-8.jpg' },
+];
 ---
 
 <BaseLayout title="TerraGen Kebumen" description="Penjelasan TerraGen secara praktis untuk wilayah Kebumen. Cocok untuk konsultasi tanah keras, lahan menurun kualitasnya, dan kebutuhan order melalui agen resmi NoeSantara." image="/assets/produk/terragen-produk-1.jpeg" schema={schema}>
@@ -49,6 +60,22 @@ const schema = {
           Karena kondisi lahan, komoditas, dan tujuan aplikasi bisa berbeda. Website ini tidak mendorong klaim
           berlebihan, tetapi mengarahkan calon pembeli untuk memulai percakapan yang lebih relevan dengan kondisi nyata.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionHeading eyebrow="Cara Aplikasi" title="Panduan aplikasi TerraGen berdasarkan komoditas" center={true} />
+      <div class="application-guide-grid">
+        {applicationGuides.map((guide) => (
+          <article class="application-guide-card" data-reveal>
+            <img src={guide.image} alt={guide.title} loading="lazy" width="1190" height="1684" />
+            <div class="application-guide-caption">
+              <h3>{guide.title}</h3>
+            </div>
+          </article>
+        ))}
       </div>
     </div>
   </section>
